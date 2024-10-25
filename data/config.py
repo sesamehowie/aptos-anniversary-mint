@@ -14,6 +14,8 @@ TX_TIMEOUT: int = 10
 
 APTOS_EXPLORER_URL: str = "https://explorer.aptoslabs.com"
 
-PRIVATE_KEYS = read_txt(os.path.join(CWD, Path("inputs/private_keys.txt")))
+PRIVATE_KEYS = read_txt(os.path.join(CWD, Path("data/inputs/private_keys.txt")))
 
-PROXIES = read_txt(os.path.join(CWD, Path("inputs/proxies.txt")))
+PROXIES = read_txt(os.path.join(CWD, Path("data/inputs/proxies.txt")))
+
+RPC = "https://rpc.ankr.com/http/aptos/v1"

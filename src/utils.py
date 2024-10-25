@@ -1,3 +1,4 @@
+import csv
 import time
 import random
 from decimal import Decimal
@@ -55,3 +56,15 @@ def random_sleep() -> None:
     rand_t = random.randint(*SLEEP_BETWEEN_ACCOUNTS)
     logger.debug(f"Sleeping for {rand_t} seconds...")
     time.sleep(rand_t)
+
+
+def write_csv(
+    file_name: str | Path,
+    data: list[list[str] | tuple[str]],
+    header: list[str] | tuple[str] = ["address", "points"],
+):
+    with open(file_name, mode="w", newline="") as file:
+        writer = csv.writer(file)
+
+        writer.writerow(header)
+        writer.writerows(data)
